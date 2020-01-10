@@ -1,6 +1,6 @@
 Name: libserializer
 Version: 1.1.2
-Release: 10%{?dist}
+Release: 8%{?dist}
 Summary: JFreeReport General Serialization Framework
 License: LGPLv2+
 Group: System Environment/Libraries
@@ -9,7 +9,7 @@ Group: System Environment/Libraries
 #to simplify the licensing
 Source: libserializer-%{version}-jarsdeleted.zip
 URL: http://reporting.pentaho.org
-BuildRequires: ant, ant-contrib, java-devel, jpackage-utils, libbase >= 1.1.2
+BuildRequires: ant, ant-contrib, ant-nodeps, java-devel, jpackage-utils, libbase >= 1.1.2
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: java, jpackage-utils, libbase >= 1.1.2
 BuildArch: noarch
@@ -66,12 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadocdir}/%{name}
 
 %changelog
-* Wed Jan 08 2014 Caolán McNamara <caolanm@redhat.com> - 1.1.2-10
-- Resolves: rhbz#1048876 fix FTBFS
-
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1.2-9
-- Mass rebuild 2013-12-27
-
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.2-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
